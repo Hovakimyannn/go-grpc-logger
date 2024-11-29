@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package logger;
+
+// Add this line to specify the Go package path
+option go_package = "gen/logger";
+
+service LoggerService {
+  rpc LogMessage(LogRequest) returns (LogResponse);
+}
+
+message LogRequest {
+  string message = 1;
+}
+
+message LogResponse {
+  string status = 1;
+}
